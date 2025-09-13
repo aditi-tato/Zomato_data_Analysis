@@ -1,76 +1,55 @@
-
 # 🍽️ Zomato Data Analysis
 
-A data analysis project aimed at uncovering insights from the Zomato Bangalore restaurant dataset. This project leverages Python and libraries like Pandas, NumPy, Matplotlib, and Seaborn to perform data cleaning, exploration, and visualization.
+## 📌 Project Overview
+This project analyzes Zomato restaurant data to uncover patterns in customer preferences, restaurant popularity, and service offerings.  
+It combines **data cleaning, feature engineering, visualization, and clustering** to provide actionable insights into the food industry.
 
-## 📁 Repository Structure
+---
 
-```
-Zomato_data_Analysis/
-├── Zomato.csv                   # Main dataset
-├── Zomato_EDA.ipynb            # Jupyter Notebook with complete analysis
-└── README.md                   # Project documentation
-```
+## 🛠️ Features & Workflow
 
-## 📊 Project Objectives
+1. **Data Preprocessing**
+   - Removed missing values and duplicates.
+   - Cleaned columns (ratings, cost, etc.).
+   - Standardized formats for analysis.
 
-* Clean and preprocess the raw dataset.
-* Explore key metrics such as:
+2. **Feature Engineering**
+   - `cost_per_person` → derived from cost for two.
+   - `online_delivery_flag` and `book_table_flag` → converted into binary indicators.
+   - `rating_category` → grouped into Poor, Average, Good, Excellent.
 
-  * Restaurant types and locations
-  * Average cost for two people
-  * Rating distribution
-  * Popular cuisines and online delivery availability
-* Visualize trends and patterns using charts and graphs.
+3. **Exploratory Data Analysis (EDA)**
+   - Distribution of ratings, costs, and votes.
+   - Restaurant type frequency analysis.
+   - Impact of online delivery and table booking.
 
-## 🔍 Technologies Used
+4. **Correlation Analysis**
+   - Heatmap to visualize relationships between cost, votes, ratings, and service flags.
+   - Found strong relation between votes and ratings, weaker link between cost and ratings.
 
-* Python 3
-* Pandas
-* NumPy
-* Matplotlib
-* Seaborn
-* Jupyter Notebook
+5. **Clustering**
+   - Applied **KMeans clustering** on cost, ratings, votes, and engineered features.
+   - Segmented restaurants into meaningful groups (Budget, Mid-range Popular, Premium, Mixed).
 
-## 📈 Key Insights
+6. **Visualization**
+   - Used **Seaborn & Matplotlib** for static plots.
+   - Extended with **interactive visualizations (Plotly)** for deeper exploration.
 
-Some of the findings include:
+---
 
-* **Popular Locations**: Areas with the highest concentration of restaurants.
-* **Online Ordering**: Trends in online ordering preferences across locations.
-* **Ratings**: Distribution of ratings and their correlation with restaurant types.
-* **Cost Analysis**: Average cost for dining in different areas.
+## 📊 Key Insights
+- Higher cost does not guarantee higher ratings.
+- Popular restaurants (more votes) tend to have higher ratings.
+- Online delivery and table booking improve customer engagement but aren’t the only factors.
+- Restaurant clusters reveal **different market segments**: affordable popular spots vs luxury fine dining.
 
+---
 
-## 📌 How to Run
+## 🚀 Future Enhancements
+- Sentiment analysis using customer review text (if available).
+- Dashboard development using **Streamlit/Dash** for interactive exploration.
+- Time-series analysis if timestamped review data is obtained.
 
-1. Clone this repository:
+---
 
-   ```bash
-   git clone https://github.com/aditi-tato/Zomato_data_Analysis.git
-   cd Zomato_data_Analysis
-   ```
-
-2. Install required libraries:
-
-   ```bash
-   pip install pandas numpy matplotlib seaborn
-   ```
-
-3. Open the Jupyter notebook:
-
-   ```bash
-   jupyter notebook Zomato_EDA.ipynb
-   ```
-
-## 🧹 Data Cleaning Steps
-
-* Removal of duplicate entries
-* Handling missing values
-* Standardizing text entries
-* Filtering irrelevant columns
-
-## 📚 Dataset Source
-
-The dataset used is publicly available and sourced from Kaggle: [Zomato Bangalore Restaurants Dataset](https://www.kaggle.com/datasets/himanshupoddar/zomato-bangalore-restaurants)
-
+## 📂 Repository Structure
